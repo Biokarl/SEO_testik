@@ -64,6 +64,18 @@ document.addEventListener('DOMContentLoaded', () => {
     },
   });
 
+  // ===== TOC (Content Table) SWIPER — как Download на мобилке: 2 в столбик, свайп =====
+  const tocSwiper = new Swiper('.toc__swiper', {
+    slidesPerView: 1.15,
+    spaceBetween: 16,
+    breakpoints: {
+      768: {
+        slidesPerView: 6,
+        spaceBetween: 12,
+      },
+    },
+  });
+
   // ===== DOWNLOAD BRANDS SWIPER (мобилка: 1 слайд с peek, десктоп: 4 колонки) =====
   const downloadSwiper = new Swiper('.download-brands__swiper', {
     slidesPerView: 1.15,

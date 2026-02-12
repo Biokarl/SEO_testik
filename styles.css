@@ -72,9 +72,16 @@ button{border:none;background:none;cursor:pointer;font-family:inherit}
 .toc__title{font-size:36px;margin-bottom:4px}
 .toc__title-mobile{display:none}
 .toc__date{font-size:13px;color:#75767F;margin-bottom:20px}
+.toc__swiper{overflow:hidden}
 .toc__tags{display:flex;flex-wrap:wrap;gap:12px}
-.toc__tag{padding:12px 24px;background:#F3F4F5;border-radius:50px;font-size:14px;font-weight:500;color:#191B23;transition:.3s}
+.toc__column{display:flex;flex-direction:column;gap:10px}
+.toc__tag{padding:12px 24px;background:#F3F4F5;border-radius:50px;font-size:14px;font-weight:500;color:#191B23;transition:.3s;display:block;text-align:center}
 .toc__tag:hover{background:#FF7D34;color:#fff}
+
+/* Desktop: все теги в одну строку (display: contents) */
+@media(min-width:769px){
+  .toc .swiper-slide,.toc .toc__column{display:contents}
+}
 
 /* ==============================================
    3. INDIAN PREMIER LEAGUE
@@ -119,6 +126,11 @@ button{border:none;background:none;cursor:pointer;font-family:inherit}
 .match-card__vs{font-size:14px;font-weight:700;color:#FF7D34}
 .match-card__btn{width:100%;border-radius:50px;padding:14px;margin-top:auto}
 
+/* Одинаковая высота карточек на десктопе */
+.ipl-live__swiper .swiper-wrapper{align-items:stretch}
+.ipl-live__swiper .swiper-slide{height:auto;display:flex}
+.ipl-live__swiper .match-card{flex:1;min-width:0}
+
 /* ==============================================
    6. WELCOME BONUS (dark)
    ============================================== */
@@ -139,6 +151,7 @@ button{border:none;background:none;cursor:pointer;font-family:inherit}
 .reasons__title{text-align:center;margin-bottom:40px}
 .reasons__list{max-width:920px;margin:0 auto}
 .reasons__btn-wrap{text-align:center;margin-top:32px}
+.reasons .accordion-item{background:#fff;box-shadow:0 2px 12px rgba(0,0,0,.06)}
 
 /* ==============================================
    8. IPL MOBILE APP FEATURES
@@ -161,10 +174,8 @@ button{border:none;background:none;cursor:pointer;font-family:inherit}
 .how-to-use__title{text-align:center;margin-bottom:40px}
 .how-to-use__list{max-width:920px;margin:0 auto}
 .how-to-use__btn-wrap{text-align:center;margin-top:32px}
+.how-to-use .accordion-item{background:#fff;box-shadow:0 2px 12px rgba(0,0,0,.06)}
 
-/* inner accordion items inside gray sections get white bg */
-.reasons .accordion-item,
-.how-to-use .accordion-item,
 .faq .accordion-item{background:#fff}
 
 /* ==============================================
@@ -194,15 +205,15 @@ button{border:none;background:none;cursor:pointer;font-family:inherit}
 .download-brands__item:hover img{filter:grayscale(0);opacity:1}
 
 /* ==============================================
-   12. CRICKET BETTING APP MAIN INFO (dark table)
+   12. CRICKET BETTING APP MAIN INFO (тёмная секция, внутри — серый блок)
    ============================================== */
 .cricket-info{background:linear-gradient(145deg,#1A1919,#120E0B);padding:80px 0;border-radius:24px;margin:0 20px}
-.cricket-info__title{color:#fff;text-align:center;margin-bottom:48px}
+.cricket-info__title{color:#fff;text-align:left;margin-bottom:48px}
 .cricket-info__table{max-width:800px;margin:0 auto}
-.cricket-info__row{display:grid;grid-template-columns:200px 1fr 48px;align-items:center;padding:20px 24px;border:1px solid rgba(255,255,255,.1);border-radius:12px;margin-bottom:12px}
+.cricket-info__row{display:grid;grid-template-columns:200px 1fr 48px;align-items:center;padding:20px 24px;background:#000;border-radius:20px;margin-bottom:12px}
 .cricket-info__label{font-size:15px;font-weight:700;color:#fff}
-.cricket-info__value{font-size:14px;color:rgba(255,255,255,.5)}
-.cricket-info__num{font-size:14px;color:rgba(255,255,255,.3);text-align:right}
+.cricket-info__value{font-size:14px;color:#fff}
+.cricket-info__num{font-size:14px;color:#fff;text-align:right}
 
 /* ==============================================
    13. HOW TO DOWNLOAD (prediction)
@@ -238,6 +249,32 @@ button{border:none;background:none;cursor:pointer;font-family:inherit}
 .footer__nav{display:flex;flex-wrap:wrap;gap:16px 24px}
 .footer__nav a{font-size:13px;color:rgba(255,255,255,.5);transition:.3s}
 .footer__nav a:hover{color:#FF7D34}
+
+/* ==============================================
+   DESKTOP — Reasons & How to use (как на макете)
+   ============================================== */
+@media(min-width:769px){
+  .reasons{background:#F7F7F7;padding:80px 50px;border-radius:24px;margin:32px auto 0;max-width:1000px}
+  .how-to-use{background:#F7F7F7;padding:80px 50px;border-radius:24px;margin:32px auto 0;max-width:1000px}
+  .reasons .container,
+  .how-to-use .container{padding-left:0;padding-right:0}
+  .reasons__title,
+  .how-to-use__title{margin-bottom:48px}
+  .reasons__list,
+  .how-to-use__list{max-width:920px;margin-left:auto;margin-right:auto}
+  .reasons .accordion-item,
+  .how-to-use .accordion-item{border-radius:12px;margin-bottom:16px;box-shadow:0 2px 12px rgba(0,0,0,.06)}
+  .reasons__btn-wrap,
+  .how-to-use__btn-wrap{margin-top:40px}
+
+  /* Cricket info — тайтл на тёмном фоне, серый блок только для таблицы (тёмно-серый, белый текст) */
+  .cricket-info .container{background:transparent;max-width:1000px;margin:0 auto;padding:48px 50px 80px;box-sizing:border-box}
+  .cricket-info__title{margin-bottom:40px;color:#fff}
+  .cricket-info__table{background:#2a2a2a;border-radius:24px;padding:28px 40px;margin-top:0;max-width:100%}
+  .cricket-info__row{background:#000;border:1px solid rgba(255,255,255,.08);margin-bottom:8px;border-radius:20px}
+  .cricket-info__row:last-child{margin-bottom:0}
+  .cricket-info__label,.cricket-info__value,.cricket-info__num{color:#fff}
+}
 
 /* ==============================================
    RESPONSIVE — TABLET
@@ -289,14 +326,20 @@ button{border:none;background:none;cursor:pointer;font-family:inherit}
   .hero__avatar-count{border-color:#FCFDFE}
   .hero__users-text{font-size:12px}
 
-  /* 3. Table of Contents — Content Table, сетка 2 колонки, пилюли */
-  .toc{padding:32px 0 40px}
+  /* 3. Table of Contents — свайп горизонтально, в каждом слайде 2 карточки в столбик */
+  .toc{padding:32px 0 40px;overflow-x:hidden}
+  .toc .container{overflow-x:hidden}
   .toc__title-desktop{display:none}
   .toc__title-mobile{display:inline}
   .toc__title{font-size:24px;margin-bottom:4px}
   .toc__date{font-size:12px;margin-bottom:20px}
-  .toc__tags{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-  .toc__tag{padding:14px 16px;border-radius:50px;font-size:13px;font-weight:500;text-align:center}
+  .toc__swiper{overflow:hidden}
+  .toc .toc__tags.swiper-wrapper{flex-wrap:nowrap !important}
+  .toc .swiper-slide{display:flex;height:auto;flex-shrink:0;box-sizing:border-box}
+  .toc .swiper-slide .toc__column{width:100%}
+  .toc .toc__column{display:flex;flex-direction:column;gap:10px;width:100%;min-width:0;height:100%;flex-shrink:0}
+  .toc__tag{padding:16px 20px;min-height:56px;border-radius:50px;font-size:13px;font-weight:500;text-align:center;display:flex;align-items:center;justify-content:center;background:#F3F4F5;transition:.3s}
+  .toc__tag:hover{background:#FF7D34;color:#fff}
 
   /* 4. Indian — белая карточка, картинка сверху, текст, навигация */
   .indian{margin:16px;padding:0;border-radius:24px;background:#F3F4F5;overflow:hidden}
@@ -332,11 +375,11 @@ button{border:none;background:none;cursor:pointer;font-family:inherit}
   .bonus-card__title{font-size:16px;margin-bottom:8px}
   .bonus-card__text{font-size:13px;text-align:left}
 
-  /* 8. Reasons — светлый блок, аккордеон, кнопка Learn More */
+  /* 8. Reasons — серый блок, карточки белые */
   .reasons{margin:16px;padding:32px 0 40px;border-radius:24px;background:#F3F4F5}
   .reasons__title{font-size:24px;margin-bottom:24px;text-align:left;padding:0 4px}
   .reasons__list{padding:0 4px}
-  .reasons .accordion-item{margin-bottom:12px;border-radius:12px}
+  .reasons .accordion-item{margin-bottom:12px;border-radius:12px;background:#fff;box-shadow:0 2px 12px rgba(0,0,0,.06)}
   .reasons__btn-wrap .btn{width:100%;max-width:280px}
 
   /* 9. Features — картинка сверху, заголовок, текст, список, кнопка */
@@ -348,10 +391,11 @@ button{border:none;background:none;cursor:pointer;font-family:inherit}
   .features__list li{font-size:14px;margin-bottom:12px}
   .features__btn{width:100%}
 
-  /* 10. How to use — аккордеон, кнопка Learn More */
+  /* 10. How to use — серый блок, карточки белые */
   .how-to-use{margin:16px;padding:32px 0 40px;border-radius:24px;background:#F3F4F5}
   .how-to-use__title{font-size:24px;margin-bottom:24px;text-align:left}
   .how-to-use__list{padding:0 4px}
+  .how-to-use .accordion-item{background:#fff;box-shadow:0 2px 12px rgba(0,0,0,.06)}
   .how-to-use__btn-wrap .btn{width:100%;max-width:280px}
 
   /* 11. Reviews — горизонтальный свайп, карточки одинаковой высоты, avatar слева */
@@ -377,9 +421,9 @@ button{border:none;background:none;cursor:pointer;font-family:inherit}
   .download-brands__item img{height:24px;opacity:.6}
   .download-brands__item:hover img{filter:grayscale(0);opacity:1}
 
-  /* 13. Cricket info — строки друг под другом */
+  /* 13. Cricket info — тёмная секция, заголовок светлый */
   .cricket-info{margin:0;border-radius:0;padding:40px 0 48px}
-  .cricket-info__title{font-size:24px;margin-bottom:24px;text-align:left;line-height:1.3}
+  .cricket-info__title{font-size:24px;margin-bottom:24px;text-align:left;line-height:1.3;color:#fff}
   .cricket-info__row{grid-template-columns:1fr 1fr 36px;padding:16px 20px;gap:8px}
   .cricket-info__label{font-size:13px}
   .cricket-info__value{font-size:13px;text-align:right;word-break:break-word}
