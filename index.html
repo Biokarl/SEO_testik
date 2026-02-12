@@ -121,13 +121,27 @@
         </div>
         <div class="indian__content">
           <h2>Indian Premier League</h2>
-          <p>IPL or the Indian Premier League is the world's top men's T20 cricket league. Organized by the BCCI, its first edition was held in 2008. The latest edition of the league (2024) had 10 participating teams. The games are held all over India in different cities. Most of the world's top cricket players are seen in this exciting league.</p>
+          <div class="swiper indian__text-swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <p class="indian__text">IPL or the Indian Premier League is the world's top men's T20 cricket league. Organized by the BCCI, its first edition was held in 2008. The latest edition of the league (2024) had 10 participating teams. The games are held all over India in different cities. Most of the world's top cricket players are seen in this exciting league.</p>
+              </div>
+              <div class="swiper-slide">
+                <p class="indian__text">The league features a round-robin group stage followed by playoffs. Each team plays 14 matches in the group stage. The top four teams qualify for the playoffs, which consist of Qualifier 1, Eliminator, Qualifier 2, and the Final. The tournament is known for its high-scoring matches and last-over finishes.</p>
+              </div>
+              <div class="swiper-slide">
+                <p class="indian__text">IPL has become a major platform for young talent. Players from across the world participate in the auction. The league runs typically from March to May each year. Viewers can watch matches on TV and streaming apps. Betting on IPL matches is popular among cricket fans.</p>
+              </div>
+            </div>
+          </div>
           <div class="indian__nav">
             <button class="slider-arrow slider-arrow--prev" id="indianPrev" aria-label="Previous">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </button>
             <div class="indian__progress">
-              <div class="indian__progress-bar" id="indianProgress"></div>
+              <span class="indian__progress-segment" data-index="0" aria-label="Slide 1"></span>
+              <span class="indian__progress-segment" data-index="1" aria-label="Slide 2"></span>
+              <span class="indian__progress-segment" data-index="2" aria-label="Slide 3"></span>
             </div>
             <button class="slider-arrow slider-arrow--next" id="indianNext" aria-label="Next">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>

@@ -20,6 +20,24 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // ===== INDIAN PREMIER LEAGUE — Swiper всегда (десктоп и мобилка), на мобилке только активный слайд виден по CSS =====
+  const indianSegments = document.querySelectorAll('.indian__progress-segment');
+  function updateIndianProgress(index) {
+    indianSegments.forEach((seg, i) => seg.classList.toggle('active', i <= index));
+  }
+  const indianTextSwiper = new Swiper('.indian__text-swiper', {
+    slidesPerView: 1,
+    spaceBetween: 0,
+    allowTouchMove: true,
+    autoHeight: true,
+    navigation: { prevEl: '#indianPrev', nextEl: '#indianNext' },
+    on: {
+      init(swiper) { updateIndianProgress(swiper.activeIndex); },
+      slideChange(swiper) { updateIndianProgress(swiper.activeIndex); },
+    },
+  });
+  indianSegments.forEach((seg, i) => seg.addEventListener('click', () => indianTextSwiper.slideTo(i)));
+
   // ===== IPL LIVE CRICKET BETTING SWIPER =====
   const liveSwiper = new Swiper('.ipl-live__swiper', {
     slidesPerView: 1.15,
