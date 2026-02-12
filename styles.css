@@ -1,0 +1,347 @@
+/* ===== RESET ===== */
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Poppins',sans-serif;font-size:16px;line-height:160%;color:#191B23;background:#FCFDFE;overflow-x:hidden}
+a{text-decoration:none;color:inherit;transition:.3s}
+ul{list-style:none}
+img{max-width:100%;height:auto;display:block}
+button{border:none;background:none;cursor:pointer;font-family:inherit}
+
+/* ===== CONTAINER ===== */
+.container{max-width:1200px;margin:0 auto;padding:0 20px}
+
+/* ===== BTN ===== */
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:16px 48px;border-radius:50px;font-size:16px;font-weight:600;transition:.3s;white-space:nowrap;cursor:pointer}
+.btn--primary{background:#FF7D34;color:#fff}
+.btn--primary:hover{background:#e86a20;transform:translateY(-2px);box-shadow:0 6px 24px rgba(255,125,52,.35)}
+
+/* ===== SLIDER ARROWS (reusable) ===== */
+.slider-arrow{width:40px;height:40px;border-radius:50%;border:1px solid #E0E0E0;display:inline-flex;align-items:center;justify-content:center;color:#191B23;transition:.3s;background:#fff;flex-shrink:0}
+.slider-arrow:hover{border-color:#FF7D34;color:#FF7D34}
+
+/* ===== ACCORDION (reusable) ===== */
+.accordion-item{background:#F3F4F5;border-radius:16px;margin-bottom:16px;overflow:hidden;transition:.3s}
+.accordion-item__header{display:flex;align-items:center;justify-content:space-between;width:100%;padding:24px 28px;font-size:18px;font-weight:700;color:#191B23;text-align:left;gap:16px}
+.accordion-item__icon{font-size:24px;font-weight:400;color:#75767F;transition:.3s;flex-shrink:0}
+.accordion-item.active .accordion-item__icon{transform:rotate(45deg);color:#FF7D34}
+.accordion-item__body{max-height:0;overflow:hidden;transition:max-height .4s ease,padding .4s ease}
+.accordion-item__body p{padding:0 28px 24px;font-size:15px;color:#75767F;line-height:170%}
+.accordion-item.active .accordion-item__body{max-height:400px}
+
+/* ==============================================
+   1. HEADER
+   ============================================== */
+.header{position:sticky;top:0;z-index:1000;background:#FCFDFE;padding:14px 0;transition:box-shadow .3s}
+.header__inner{display:flex;align-items:center;justify-content:space-between;gap:24px}
+.header__logo{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.header__logo-icon{display:inline-flex;align-items:center;justify-content:center;background:#FF7D34;color:#fff;font-size:11px;font-weight:700;border-radius:6px;padding:4px 8px;letter-spacing:.5px}
+.header__logo-text{font-size:14px;font-weight:700;color:#191B23;letter-spacing:1px}
+.header__nav-list{display:flex;align-items:center;gap:32px}
+.header__nav-link{font-size:14px;font-weight:500;color:#75767F;transition:.3s}
+.header__nav-link:hover,.header__nav-link--active{color:#FF7D34}
+.header__cta{padding:10px 28px;font-size:14px}
+.header__burger{display:none;flex-direction:column;gap:5px;width:28px;padding:4px 0}
+.header__burger span{display:block;width:100%;height:2px;background:#191B23;border-radius:2px;transition:.3s}
+.header__burger.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.header__burger.active span:nth-child(2){opacity:0}
+.header__burger.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+
+/* ==============================================
+   1. HERO
+   ============================================== */
+.hero{padding:60px 0 80px}
+.hero__inner{display:flex;align-items:center;gap:40px}
+.hero__content{flex:1;max-width:520px}
+.hero__content h1{margin-bottom:20px}
+.hero__text{color:#75767F;margin-bottom:32px;font-size:16px}
+.hero__btn{margin-bottom:40px}
+.hero__users{display:flex;align-items:center;gap:16px}
+.hero__avatars{display:flex;align-items:center}
+.hero__avatar{width:40px;height:40px;border-radius:50%;object-fit:cover;border:2px solid #fff;margin-left:-10px}
+.hero__avatar:first-child{margin-left:0}
+.hero__avatar-count{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;background:#F3F4F5;font-size:11px;font-weight:600;color:#191B23;margin-left:-10px;border:2px solid #fff}
+.hero__users-text{display:flex;flex-direction:column;font-size:13px;color:#75767F;line-height:1.4}
+.hero__users-text span:first-child{font-weight:600;color:#191B23}
+.hero__image{flex:1;display:flex;justify-content:flex-end}
+.hero__image img{max-height:520px;object-fit:contain}
+
+/* ==============================================
+   2. TABLE OF CONTENTS
+   ============================================== */
+.toc{padding:48px 0}
+.toc__title{font-size:36px;margin-bottom:4px}
+.toc__date{font-size:13px;color:#75767F;margin-bottom:20px}
+.toc__tags{display:flex;flex-wrap:wrap;gap:12px}
+.toc__tag{padding:12px 24px;background:#F3F4F5;border-radius:50px;font-size:14px;font-weight:500;color:#191B23;transition:.3s}
+.toc__tag:hover{background:#FF7D34;color:#fff}
+
+/* ==============================================
+   3. INDIAN PREMIER LEAGUE
+   ============================================== */
+.indian{padding:64px 0;background:#F3F4F5;border-radius:24px;margin:0 20px}
+.indian__inner{display:flex;align-items:center;gap:60px}
+.indian__image{flex:0 0 auto;max-width:480px;width:100%}
+.indian__content{flex:1}
+.indian__content h2{margin-bottom:20px}
+.indian__content p{color:#75767F;margin-bottom:28px}
+.indian__nav{display:flex;align-items:center;gap:16px}
+.indian__progress{flex:1;height:4px;background:#E0E0E0;border-radius:2px;overflow:hidden}
+.indian__progress-bar{height:100%;width:60%;background:linear-gradient(90deg,#FF7D34 60%,#8BC34A 60%);border-radius:2px;transition:width .3s}
+
+/* ==============================================
+   4. IPL WIN BETTING APP DOWNLOAD
+   ============================================== */
+.ipl-download{padding:80px 0}
+.ipl-download__inner{display:flex;align-items:center;gap:60px}
+.ipl-download__content{flex:1}
+.ipl-download__content h2{margin-bottom:20px}
+.ipl-download__content p{color:#75767F;margin-bottom:28px}
+.ipl-download__badges{display:flex;gap:12px;flex-wrap:wrap}
+.ipl-download__badge img{height:52px}
+.ipl-download__badge:hover img{transform:scale(1.03)}
+.ipl-download__image{flex:0 0 auto;max-width:480px;width:100%}
+
+/* ==============================================
+   5. IPL LIVE CRICKET BETTING (swiper)
+   ============================================== */
+.ipl-live{padding:64px 0}
+.ipl-live__header{display:flex;align-items:center;justify-content:space-between;margin-bottom:32px}
+.ipl-live__nav{display:flex;gap:8px}
+.match-card{background:#F3F4F5;border-radius:20px;padding:28px 24px;height:100%;display:flex;flex-direction:column}
+.match-card__venue{font-size:15px;font-weight:600;color:#191B23;margin-bottom:4px}
+.match-card__date{font-size:13px;color:#75767F;margin-bottom:20px}
+.match-card__teams{display:flex;align-items:center;justify-content:center;gap:16px;margin-bottom:24px}
+.match-card__team{display:flex;align-items:center;gap:8px}
+.match-card__logo{font-size:28px}
+.match-card__name{font-size:14px;font-weight:600;color:#191B23}
+.match-card__overs{font-size:12px;color:#75767F}
+.match-card__vs{font-size:14px;font-weight:700;color:#FF7D34}
+.match-card__btn{width:100%;border-radius:50px;padding:14px;margin-top:auto}
+
+/* ==============================================
+   6. WELCOME BONUS (dark)
+   ============================================== */
+.welcome-bonus{background:linear-gradient(145deg,#1A1919,#120E0B);padding:72px 0}
+.welcome-bonus__title{color:#fff;text-align:center;margin-bottom:16px}
+.welcome-bonus__subtitle{text-align:center;color:rgba(255,255,255,.5);font-size:14px;max-width:760px;margin:0 auto 48px;line-height:170%}
+.welcome-bonus__cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.bonus-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:20px;padding:36px 28px;text-align:center;transition:.3s}
+.bonus-card:hover{background:rgba(255,255,255,.1);transform:translateY(-4px)}
+.bonus-card__icon{margin-bottom:20px;display:flex;justify-content:center}
+.bonus-card__title{font-size:18px;color:#fff;margin-bottom:12px;font-weight:700}
+.bonus-card__text{color:rgba(255,255,255,.45);font-size:14px;line-height:170%}
+
+/* ==============================================
+   7. REASONS TO DOWNLOAD (accordion)
+   ============================================== */
+.reasons{padding:80px 0;background:#F3F4F5;border-radius:24px;margin:0 20px}
+.reasons__title{text-align:center;margin-bottom:40px}
+.reasons__list{max-width:920px;margin:0 auto}
+.reasons__btn-wrap{text-align:center;margin-top:32px}
+
+/* ==============================================
+   8. IPL MOBILE APP FEATURES
+   ============================================== */
+.features{padding:80px 0;background:#F3F4F5;border-radius:24px;margin:32px 20px 0}
+.features__inner{display:flex;align-items:center;gap:60px}
+.features__image{flex:0 0 auto;max-width:400px;width:100%}
+.features__content{flex:1}
+.features__content h2{margin-bottom:16px}
+.features__desc{color:#75767F;font-size:15px;margin-bottom:24px;line-height:170%}
+.features__list{list-style:none;margin-bottom:28px}
+.features__list li{display:flex;align-items:flex-start;gap:12px;margin-bottom:16px;font-size:15px;color:#75767F;line-height:160%}
+.features__check{flex-shrink:0;margin-top:2px}
+.features__btn{margin-top:4px}
+
+/* ==============================================
+   9. HOW TO USE (accordion, gray bg)
+   ============================================== */
+.how-to-use{padding:80px 0;background:#F3F4F5;border-radius:24px;margin:32px 20px 0}
+.how-to-use__title{text-align:center;margin-bottom:40px}
+.how-to-use__list{max-width:920px;margin:0 auto}
+.how-to-use__btn-wrap{text-align:center;margin-top:32px}
+
+/* inner accordion items inside gray sections get white bg */
+.reasons .accordion-item,
+.how-to-use .accordion-item,
+.faq .accordion-item{background:#fff}
+
+/* ==============================================
+   10. REVIEWS (swiper)
+   ============================================== */
+.reviews{padding:80px 0}
+.reviews__header{display:flex;align-items:center;justify-content:space-between;margin-bottom:36px}
+.reviews__nav{display:flex;gap:8px}
+.review-card{display:flex;gap:20px;background:#F3F4F5;border-radius:20px;padding:28px;height:100%}
+.review-card__img{flex:0 0 160px}
+.review-card__img img{width:160px;height:180px;object-fit:cover;border-radius:16px}
+.review-card__body{flex:1;display:flex;flex-direction:column}
+.review-card__name{font-size:18px;font-weight:700;color:#191B23;margin-bottom:8px}
+.review-card__stars{display:flex;gap:3px;margin-bottom:12px}
+.review-card__text{font-size:14px;color:#75767F;line-height:170%}
+
+/* ==============================================
+   11. DOWNLOAD BRANDS
+   ============================================== */
+.download-brands{padding:64px 0}
+.download-brands h2{margin-bottom:32px}
+.download-brands__grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.download-brands__item{display:flex;align-items:center;justify-content:center;background:#F3F4F5;border-radius:12px;padding:20px;transition:.3s}
+.download-brands__item img{height:28px;object-fit:contain;filter:grayscale(100%);opacity:.6;transition:.3s}
+.download-brands__item:hover{background:#E8E9EB}
+.download-brands__item:hover img{filter:grayscale(0);opacity:1}
+
+/* ==============================================
+   12. CRICKET BETTING APP MAIN INFO (dark table)
+   ============================================== */
+.cricket-info{background:linear-gradient(145deg,#1A1919,#120E0B);padding:80px 0;border-radius:24px;margin:0 20px}
+.cricket-info__title{color:#fff;text-align:center;margin-bottom:48px}
+.cricket-info__table{max-width:800px;margin:0 auto}
+.cricket-info__row{display:grid;grid-template-columns:200px 1fr 48px;align-items:center;padding:20px 24px;border:1px solid rgba(255,255,255,.1);border-radius:12px;margin-bottom:12px}
+.cricket-info__label{font-size:15px;font-weight:700;color:#fff}
+.cricket-info__value{font-size:14px;color:rgba(255,255,255,.5)}
+.cricket-info__num{font-size:14px;color:rgba(255,255,255,.3);text-align:right}
+
+/* ==============================================
+   13. HOW TO DOWNLOAD (prediction)
+   ============================================== */
+.prediction{padding:80px 0;background:#F3F4F5;border-radius:24px;margin:32px 20px 0}
+.prediction__title{margin-bottom:12px}
+.prediction__subtitle{color:#75767F;font-size:15px;margin-bottom:40px;max-width:520px;line-height:170%}
+.prediction__card{display:flex;align-items:center;gap:40px;background:#fff;border-radius:20px;padding:40px;margin-bottom:24px}
+.prediction__card--reverse{flex-direction:row-reverse}
+.prediction__card-image{flex:0 0 340px}
+.prediction__card-image img{width:100%;border-radius:16px}
+.prediction__card-content{flex:1}
+.prediction__card-content h3{font-size:28px;margin-bottom:16px}
+.prediction__card-content p{color:#75767F;font-size:15px;margin-bottom:24px;line-height:170%}
+
+/* ==============================================
+   14. FAQ (accordion)
+   ============================================== */
+.faq{padding:80px 0}
+.faq__title{text-align:center;margin-bottom:48px}
+.faq__list{max-width:920px;margin:0 auto}
+
+/* ==============================================
+   15. FOOTER (dark)
+   ============================================== */
+.footer{background:#191B23;padding:28px 0}
+.footer__inner{display:flex;align-items:center;justify-content:space-between;gap:24px}
+.footer__left{display:flex;flex-direction:column;gap:8px}
+.footer__socials{display:flex;gap:16px}
+.footer__social{color:rgba(255,255,255,.5);transition:.3s}
+.footer__social:hover{color:#FF7D34}
+.footer__copy{font-size:12px;color:rgba(255,255,255,.35)}
+.footer__nav{display:flex;flex-wrap:wrap;gap:16px 24px}
+.footer__nav a{font-size:13px;color:rgba(255,255,255,.5);transition:.3s}
+.footer__nav a:hover{color:#FF7D34}
+
+/* ==============================================
+   RESPONSIVE — TABLET
+   ============================================== */
+@media(max-width:1024px){
+  .hero__inner{gap:32px}
+  .hero__image img{max-height:420px}
+  .indian__inner{gap:40px}
+  .indian__image{max-width:380px}
+  .ipl-download__inner{gap:40px}
+  .ipl-download__image{max-width:380px}
+  .features__inner{gap:40px}
+  .features__image{max-width:320px}
+  .welcome-bonus__cards{grid-template-columns:repeat(3,1fr)}
+  .prediction__card-image{flex:0 0 280px}
+  .review-card__img{flex:0 0 130px}
+  .review-card__img img{width:130px;height:150px}
+}
+
+/* ==============================================
+   RESPONSIVE — MOBILE
+   ============================================== */
+@media(max-width:768px){
+  h1{font-size:52px}
+  h2{font-size:32px}
+  h3{font-size:24px}
+  h4{font-size:20px}
+  .container{padding:0 16px}
+
+  /* Header */
+  .header__burger{display:flex}
+  .header__cta{display:none}
+  .header__nav{position:fixed;top:56px;left:0;right:0;bottom:0;background:#FCFDFE;padding:16px;transform:translateX(100%);transition:.3s;z-index:999;overflow-y:auto}
+  .header__nav.active{transform:translateX(0)}
+  .header__nav-list{flex-direction:column;gap:0}
+  .header__nav-link{display:block;padding:14px 0;font-size:16px;border-bottom:1px solid #F3F4F5}
+
+  /* Hero */
+  .hero{padding:32px 0 48px}
+  .hero__inner{flex-direction:column;gap:32px}
+  .hero__content{max-width:100%}
+  .hero__image{justify-content:center}
+  .hero__image img{max-height:400px}
+
+  /* TOC */
+  .toc__tags{gap:8px}
+  .toc__tag{padding:10px 18px;font-size:13px}
+
+  /* Indian */
+  .indian{margin:0;border-radius:0;padding:48px 0}
+  .indian__inner{flex-direction:column;gap:28px}
+  .indian__image{max-width:100%}
+
+  /* IPL Download */
+  .ipl-download{padding:48px 0}
+  .ipl-download__inner{flex-direction:column;gap:28px}
+  .ipl-download__image{max-width:100%}
+
+  /* Welcome Bonus */
+  .welcome-bonus{padding:48px 0}
+  .welcome-bonus__cards{grid-template-columns:1fr}
+
+  /* Reasons */
+  .reasons{margin:0;border-radius:0;padding:48px 0}
+
+  /* Features */
+  .features{margin:0;border-radius:0;padding:48px 0}
+  .features__inner{flex-direction:column;gap:28px}
+  .features__image{max-width:100%}
+
+  /* How to use */
+  .how-to-use{margin:0;border-radius:0;padding:48px 0}
+
+  /* Reviews */
+  .reviews{padding:48px 0}
+  .review-card{flex-direction:column}
+  .review-card__img{flex:0 0 auto}
+  .review-card__img img{width:100%;height:200px}
+
+  /* Download brands */
+  .download-brands__grid{grid-template-columns:repeat(2,1fr)}
+
+  /* Cricket info */
+  .cricket-info{margin:0;border-radius:0;padding:48px 0}
+  .cricket-info__row{grid-template-columns:1fr 1fr 40px;padding:16px 20px}
+  .cricket-info__label{font-size:14px}
+
+  /* Prediction */
+  .prediction{margin:0;border-radius:0;padding:48px 0}
+  .prediction__card,.prediction__card--reverse{flex-direction:column;padding:24px}
+  .prediction__card-image{flex:0 0 auto}
+  .prediction__card-content h3{font-size:22px}
+
+  /* FAQ */
+  .faq{padding:48px 0}
+
+  /* Footer */
+  .footer__inner{flex-direction:column;align-items:flex-start;gap:16px}
+}
+
+@media(max-width:480px){
+  h1{font-size:36px}
+  h2{font-size:28px}
+  h3{font-size:20px}
+  .hero__users{flex-direction:column;align-items:flex-start;gap:12px}
+  .download-brands__grid{grid-template-columns:repeat(2,1fr)}
+  .accordion-item__header{padding:20px;font-size:16px}
+  .accordion-item__body p{padding:0 20px 20px}
+}
