@@ -1,0 +1,9 @@
+# Windows reserved name — Git cannot index "nul"
+nul
+
+# Макеты
+maket/
+
+# Файлы mobile и desktop
+mobile
+desktop

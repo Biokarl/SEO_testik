@@ -46,8 +46,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ===== REVIEWS SWIPER =====
   const reviewsSwiper = new Swiper('.reviews__swiper', {
-    slidesPerView: 1,
-    spaceBetween: 20,
+    slidesPerView: 1.15,
+    spaceBetween: 16,
     navigation: {
       prevEl: '#reviewsPrev',
       nextEl: '#reviewsNext',
@@ -60,6 +60,18 @@ document.addEventListener('DOMContentLoaded', () => {
       1024: {
         slidesPerView: 2,
         spaceBetween: 24,
+      },
+    },
+  });
+
+  // ===== DOWNLOAD BRANDS SWIPER (мобилка: 1 слайд с peek, десктоп: 4 колонки) =====
+  const downloadSwiper = new Swiper('.download-brands__swiper', {
+    slidesPerView: 1.15,
+    spaceBetween: 16,
+    breakpoints: {
+      768: {
+        slidesPerView: 4,
+        spaceBetween: 12,
       },
     },
   });
